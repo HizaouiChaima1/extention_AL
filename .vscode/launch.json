@@ -1,0 +1,55 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Your own server",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://mybcserver/BC",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "default",
+            "usePublicURLFromServer": true
+        },
+        {
+            "name": "AL: Generated Snapshot request",
+            "request": "snapshotInitialize",
+            "type": "al",
+            "server": "http://mybcserver",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "port": 7049,
+            "sessionId": 4,
+            "breakOnNext": "WebClient",
+            "executionContext": "DebugAndProfile"
+        },
+        {
+            "name": "AL: Generated Attach request",
+            "request": "attach",
+            "type": "al",
+            "server": "http://mybcserver",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "port": 7049,
+            "sessionId": 4,
+            "breakOnNext": "WebClient",
+            "breakOnError": "ExcludeTry"
+        },
+        {
+            "name": "AL: Generated Download Symbols request",
+            "request": "launch",
+            "type": "al",
+            "server": "http://mybcserver",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "port": 7049
+        }
+    ]
+}
